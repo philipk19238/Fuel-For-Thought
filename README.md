@@ -13,7 +13,7 @@
 
 ### 4. Set environmental variables
 
-``export FLASK_APP=website.py``
+``export FLASK_APP=project.py``
 
 ### 5. Run the application
 
