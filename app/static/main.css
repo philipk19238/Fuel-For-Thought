@@ -1,0 +1,195 @@
+#logo{
+	height: 4vh;
+	width: auto;
+}
+
+#navbar {
+	background-color: white;
+	opacity: 0.8;
+}
+
+#navbar-wrapper {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#navbar-wrapper a {
+	margin: 1vh;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: black;
+	font-weight: bold;
+}
+
+#main-jumbotron {
+	height: 77vh;
+	background: url('https://www.nowherenetworks.com/wp-content/uploads/2018/07/oil-rig-illustration-1.jpg');
+	margin: 0px;
+}
+
+#main-img-center {
+	height: 60vh;
+	width: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#main-jumbotron-one {
+	background-color: white;
+	border: 1px solid WhiteSmoke;
+	margin: 0px;
+}
+
+#main-jumbotron-two {
+	background-color: white;
+	border: 1px solid WhiteSmoke;
+	margin: 0px;
+}
+
+
+.main-photos {
+	border: 0px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+	transition: 0.3s;
+	height: 60vh;
+	width: auto;
+	margin: 0vh;
+}
+
+.main-photos:hover {
+  	box-shadow: 0 16px 32px 0 rgba(0,0,0,2);
+}
+
+.sub-display{
+	margin-bottom: 3vh;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.display-text {
+	text-align: center;
+	font-family: 'Roboto', sans-serif; 
+	font-weight: 300;
+	color: grey;
+}
+
+.col.text {
+	display: flex;
+	align-items: center;
+}
+
+.card.text {
+	border: none;
+}
+
+.card-header.text {
+	background: white;
+	border: none;
+}
+
+#main-title {
+	font-size: 100px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	margin-bottom: 3vh;
+}
+
+#main-title-sub {
+	font-family: 'Roboto', sans-serif;
+	font-weight: light;
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 5vh;
+}
+
+#main-button {
+	width: 20%;
+	border-radius: 12px;
+	padding: 1vh;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: lighter;
+	background-color: #CC5500;
+	border: none;
+}
+
+#main-button:hover {
+	font-weight: bold;
+	outline: none;
+
+}
+
+#main-card-deck {
+	height: 30vh;
+	margin: 7vh;
+	margin-right: 6vw;
+	margin-left: 6vw;
+}
+
+.card.presentation {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+}
+
+.card.presentation:hover {
+	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+#login-title {
+	text-align: center;
+	margin-top: 1vh;
+	margin-bottom: 3vh;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+}
+
+#login_btn {
+	text-align: right;
+}
+
+#signup_btn{
+	text-align: left;
+}
+
+#button-row {
+	margin-top: 1vh;
+}
+
+.btn-secondary {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	transition: 0.3s;
+	background-color: #CC5500;
+	border: none;
+	color: white;
+	font-weight: lighter;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	padding: 1vh;
+
+}
+
+.btn-secondary:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+	background-color: #ba5820;
+	font-weight: bold;
+	
+}
+
+.modal-header {
+	background-color: WhiteSmoke;
+}
+
+.modal-footer {
+	background-color: WhiteSmoke;
+}
+
+html {
+	scroll-behavior: smooth;
+}
