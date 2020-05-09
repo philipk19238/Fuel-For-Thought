@@ -1,4 +1,4 @@
-const { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar } = require("@hashgraph/sdk");
+const { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar, FileContentsQuery, FileId } = require("@hashgraph/sdk");
 require("dotenv").config();
 
 async function main() {
@@ -15,15 +15,26 @@ async function main() {
 
   const client = Client.forTestnet()
   client.setOperator(operatorAccount, operatorPrivateKey);
-
+  
+  // make new file
   const transactionId = await new FileCreateTransaction()
     .setContents("Hello, Hedera's file service!")
     .addKey(operatorPublicKey) // Defines the "admin" of this file
     .setMaxTransactionFee(new Hbar(15))
     .execute(client);
 
-  const receipt = await transactionId.getReceipt(client);  
-  console.log("new file id = ", receipt.getFileId());
+    const receipt = await transactionId.getReceipt(client); 
+    const fileId = receipt.getFileId(); 
+    console.log("new file id = ", fileId);
+
+
+    // get file contents
+    const resp = await new FileContentsQuery()
+        // .setFileId(FileId.ADDRESS_BOOK)
+        .setFileId(fileId)
+        .execute(client);
+
+    console.log(`file contents: ${new TextDecoder().decode(resp)}`)
 }
 
 main();
