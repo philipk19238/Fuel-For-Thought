@@ -58,9 +58,6 @@ function Vehicle(x, y) {
   this.colormap = this.colormaps[this.index];
   this.clicks = this.colormaps[this.index][1] + random([-2, -1, 0, 1, 2]);
   this.position = createVector(x, y);
-  this.red = random(0, 255);
-  this.green = random(0, 255);
-  this.blue = random(0, 255);
   this.balloonSize = 70;
   this.bottomBalloonSize = 70;
   this.balloonTie = 45;
