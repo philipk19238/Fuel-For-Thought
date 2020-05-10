@@ -75,4 +75,6 @@ def assessment5():
 
 @app.route('/algo')
 def algo():
-    return neural_net.model(0, 1, 2, 3, 4)
+	question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
+	answer = neural_net.model(question_list)
+	return answer
