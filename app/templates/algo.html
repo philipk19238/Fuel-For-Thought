@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Test results</title>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript">
+        FusionCharts.ready(function(){
+            var chartObj = new FusionCharts({
+    type: 'radar',
+    renderAt: 'chart-container',
+    width: '600',
+    height: '350',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "Top Skills",
+            "subCaption": "Current month",
+            "numberPreffix": "$",
+            "theme": "fusion",
+            "radarfillcolor": "#ffffff"
+        },
+        "categories": [{
+            "category": [{
+                "label": "Drilling"
+            }, {
+                "label": "Operations Management"
+            }, {
+                "label": "Safety & Risk"
+            }, {
+                "label": "Project Management"
+            }, {
+                "label": "Maintenance"
+            }]
+        }],
+        "dataset": [{
+            "seriesname": "My Skills",
+            "data": [{
+                "value": "3.5"
+            }, {
+                "value": "4.8"
+            }, {
+                "value": "2.4"
+            }, {
+                "value": "4.9"
+            }, {
+                "value": "3.2"
+            }]
+        }, {
+            "seriesname": "Average Skills",
+            "data": [{
+                "value": "3.6"
+            }, {
+                "value": "3.0"
+            }, {
+                "value": "3.6"
+            }, {
+                "value": "3.1"
+            }, {
+                "value": "3.7"
+            }]
+        }]
+    }
+}
+);
+            chartObj.render();
+        });
+    </script>
+    </head>
+    <body>
+        <div id="chart-container">FusionCharts XT will load here!</div>
+    </body>
+</html>

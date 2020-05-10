@@ -72,12 +72,13 @@ def assessment5():
 
 @app.route('/algo')
 def algo():
-	question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
-	answer = neural_net.model(question_list)
-	return answer
+	# question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
+	# answer = neural_net.model(question_list)
+	return render_template('algo.html')
 
 @app.route('/dashboard')
 def dashboard():
 	name = request.cookies.get('name')
 	return render_template('dashboard.html', name=name)
+
 
