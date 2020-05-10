@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<script type="text/javascript">
+
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawTrendlines);
+
+function drawTrendlines() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'April');
+      data.addColumn('number', 'May');
+
+      var rows = [];
+
+      for (i=0; i < 31; i++){
+      	rows.push([i, Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)])
+      };
+
+      data.addRows(rows);
+
+      var options = {
+
+      	title: 'Action Log',
+
+        hAxis: {
+          title: 'Days',
+          titleTextStyle: {
+          	fontSize: 15,
+          	bold: true,
+          	italic: false
+          },
+          gridlines: {
+          	color: 'none'
+          }
+        },
+
+        vAxis: {
+          title: 'Daily Logins',
+          titleTextStyle: {
+          	fontSize: 15,
+          	bold: true,
+          	italic: false
+          }
+        },
+
+        colors: ['#dbdbdb', '#CC5500'],
+        gridlines: {
+        	color: 'none'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+</script>
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar" style="height: 15vh;">
+	<div class="container-simple">
+		<a href="http://127.0.0.1:5000/" class="navbar-brand"><img src="static/logo.png" style="height: 8vh; width: auto;"></a>
+	</div>
+
+	<div class="container">
+	<ul class="nav navbar" id="navbar-wrapper">
+		<form class="form-inline">
+    		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    	</form>
+    	<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color: #5cbebf; color: #5cbebf;">Search</button>
+    </ul>
+
+    <ul class="nav navbar" id="navbar-wrapper" style="margin-top: 5vh; margin-bottom: 2vh;">
+    	<div class="row">
+    		<div class="col d-flex justify-space-between">
+    			<a href="#" id="nav-text">Browse</a>
+    			<a href="#" id="nav-text">Assess</a>
+    			<a href="#" id="nav-text">Opportunities</a>
+    		</div>
+    	</div>
+    </ul>
+	</div>
+  
+
+	
+</nav>
+<div class="jumbotron" style="background-color: #5cbebf;">
+<div class="row" style="margin: 3vh;">
+<div class="col-sm-8">
+	<h1 style="text-align: left; margin-bottom: 1.5vh; font-family: 'Roboto', sans-serif; color: white; font-weight: 700; letter-spacing: 0.
+	5em;">Welcome back, John!</h1>
+<a class="card main">
+	<div class="card-header" id="chart-header"></div>
+	<div class="card-body" id="chart-body-main">
+
+		<div class="container" id='container-main'>
+
+			<div class="row">
+				<div class="col">
+					<h3 style="text-align: right; font-family: 'Roboto', sans-serif;">+500 Points</h3>
+				</div>
+			</div>
+
+				<div class="row" style="margin-top: 2vh;">
+					<div class="col-sm-3">
+						<div class="container chart-icon">
+							<img src="https://image.flaticon.com/icons/svg/479/479357.svg" style="height: 13vh; width: auto;" class="rounded-circle chart-icon" id="icon-main">
+						</div>
+					</div>
+					<div class="col-sm-7 w-100">
+						<h2 style="text-align: left; font-family: 'Roboto', sans-serif;">Module 1</h2>
+						<h1 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">General Oil and Gas Safety</h1>
+						<h4 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 300;">Identify and eliminate hazards on a drilling site</h4>
+					</div>
+				</div>
+
+			<div class="row">
+				<div class="col">
+					<h3 style="text-align: right; font-family: 'Roboto', sans-serif; font-weight: 300;">~1hr 20 mins</h3>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="card-footer main" style="height: 15vh; background-color: WhiteSmoke">
+		<div class="container" id="footer-container">
+		<h3 style="text-align: left;" id="footer-text">Continue where</h3>
+		<h3 style="text-align: left;" id="footer-text">you left off?</h3>
+		</div>
+	</div>
+</a>
+</div>
+
+
+<div class="col-sm-4">
+	<div class="container" id="container-main">
+	<h2 style="text-align: center; margin-bottom: 1.5vh; font-family: 'Roboto', sans-serif; color: white; font-weight: 700;">Related Content</h2>
+	<a class="card main">
+		<div class="card-header" id="chart-header"></div>
+		<div class="card-body" id="chart-body">
+
+			<div class="container" id="container-main-small">
+
+			<div class="row">
+				<div class="col">
+					<h5 style="text-align: right; font-family: 'Roboto', sans-serif;">+300 Points</h5>
+				</div>
+			</div>
+
+				<div class="row" style="margin-top: 2vh;">
+					<div class="col-sm-3">
+						<div class="container chart-icon">
+							<img src="https://image.flaticon.com/icons/svg/2759/2759890.svg" style="height: 9vh; width: auto; padding: 1vh;" class="rounded-circle chart-icon" id="icon-main">
+						</div>
+					</div>
+					<div class="col-sm-7 w-100">
+						<h4 style="text-align: left; font-family: 'Roboto', sans-serif;">Module 2</h4>
+						<h3 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">Onsite Protective Gear</h3>
+					</div>
+				</div>
+
+			<div class="row">
+				<div class="col">
+					<h5 style="text-align: right; font-family: 'Roboto', sans-serif; font-weight: 300;">~35 mins</h5>
+				</div>
+			</div>
+
+		</div>
+
+		</div>
+	</a>
+	<a class="card main" style="margin-top: 2vh;">
+		<div class="card-header" id="chart-header"></div>
+		<div class="card-body" id="chart-body">
+			<div class="container" id="container-main-small">
+
+			<div class="row">
+				<div class="col">
+					<h5 style="text-align: right; font-family: 'Roboto', sans-serif;">+400 Points</h5>
+				</div>
+			</div>
+
+				<div class="row" style="margin-top: 2vh;">
+					<div class="col-sm-3">
+						<div class="container chart-icon">
+							<img src="https://image.flaticon.com/icons/svg/503/503915.svg" style="height: 9vh; width: auto; padding: 1vh;" class="rounded-circle chart-icon" id="icon-main">
+						</div>
+					</div>
+					<div class="col-sm-7 w-100">
+						<h4 style="text-align: left; font-family: 'Roboto', sans-serif;">Module 3</h4>
+						<h3 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">Injuries Caused by Hazards</h3>
+					</div>
+				</div>
+
+			<div class="row">
+				<div class="col">
+					<h5 style="text-align: right; font-family: 'Roboto', sans-serif; font-weight: 300;">~50 mins</h5>
+				</div>
+			</div>
+
+		</div>
+
+
+		</div>
+	</a>
+</div>
+</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h2 style="text-align: center; margin-bottom: 1.5vh; font-family: 'Roboto', sans-serif; color: white; font-weight: 700;">Learn In-Demand Skills</h2>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		<button class="btn btn-primary" id='dashboard-button'>Safety & Risk</button>
+		<button class="btn btn-primary" id='dashboard-button'>Project Management</button>
+		<button class="btn btn-primary" id='dashboard-button'>Agile Development</button>
+		<button class="btn btn-primary" id='dashboard-button'>Six Sigma</button>
+		<button class="btn btn-primary" id='dashboard-button'>Maintenance</button>
+	</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		<button class="btn btn-primary" id='dashboard-button'>Drilling</button>
+		<button class="btn btn-primary" id='dashboard-button'>Hydraulics</button>
+		<button class="btn btn-primary" id='dashboard-button'>Geology</button>
+		<button class="btn btn-primary" id='dashboard-button'>Operations</button>
+		<button class="btn btn-primary" id='dashboard-button'>Thermodynamics</button>
+	</div>
+</div>
+</div>
+
+<div class="container" style="margin-top: 2vh;">
+	<div class="card">
+	<div class="card-header"></div>
+	<div class="card-body chart">
+		<div id="chart_div"></div>
+	</div>
+	<div class="card-footer"></div>
+	</div>
+</div>
+</div>
+	
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

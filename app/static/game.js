@@ -6,7 +6,6 @@ function setup() {
   for (var i = 0; i < 1; i++) {
     vehicles.push(new Vehicle(width/2,height/2));
   }
-  var text = createP("Every time you inflate the balloon, you earn $1. However, if you inflate the balloon too much and it pops (denoted by a black X at the top of the screen), you lose $15. The goal of the game is to make as much money as possible. Click the mouse to inflate the balloon and the space bar to reset the balloon to avoid popping it.");
 }
 
 function draw() {

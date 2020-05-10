@@ -2,7 +2,31 @@
 {% block title %}Home Page{% endblock %}
 {% block content %}
 
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar">
+	<div class="container-simple">
+		<a href="http://127.0.0.1:5000/" class="navbar-brand"><img src="https://image.flaticon.com/icons/svg/1890/1890122.svg" id="logo"></a>
+	</div>
 
+	<ul class="nav navbar" id="navbar-wrapper">
+
+		<li class="navbar-item">
+			<a class="nav-link" href="#main-jumbotron">Home</a>
+		</li>
+
+		<li class="navbar-item">
+			<a class="nav-link" href="#main-jumbotron-one">About Us</a>
+		</li>
+
+		<li class="navbar-item">
+			<a class="nav-link" href="#card-container">Our Process</a>
+		</li>
+
+		<li class="navbar-item">
+			<a class="nav-link" href="#main-jumbotron-two">Results</a>
+		</li>
+	</ul>
+	
+</nav>
 
 <div class="jumbotron d-flex align-items-center justify-content-center" id="main-jumbotron">
 	<div class="container container-fluid">
@@ -13,7 +37,7 @@
 		<p style="text-align:center;"><button onclick="makeFile()" class="btn btn-primary" id="main-button" type="button" data-toggle="modal" data-target="#login-modal">Join Now</button></p>
 	</div>
 
-	<script src="{{ url_for('static', filename='hedera/bundle.js')}}"></script>
+	<!-- <script src="{{ url_for('static', filename='hedera/bundle.js')}}"></script> -->
 </div>
 
 
@@ -104,7 +128,6 @@
 </div>
 </div>
 
-
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -147,9 +170,7 @@
 </div>
 </div>
 
-
 {% endblock %}
-
 {% block script %}
 {% endblock %}
 
