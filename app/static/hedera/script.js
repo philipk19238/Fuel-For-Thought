@@ -1,4 +1,4 @@
-import { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar, FileContentsQuery, FileId } from "@hashgraph/sdk";
+const { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar, FileContentsQuery, FileId } = require("@hashgraph/sdk");
 require("dotenv").config();
 
 
