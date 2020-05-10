@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Question 1{% endblock %}
+{% block content %}
+<script type="text/javascript">
+
+	function submit_choice(id){
+		var value = document.getElementById(id).value;
+		document.cookie = `question1=${value}`;
+		console.log(document.cookie);
+	}
+
+</script>
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar" style="height: 15vh;">
+	<div class="container-simple">
+		<a href="http://127.0.0.1:5000/" class="navbar-brand"><img src="static/logo.png" style="height: 8vh; width: auto;"></a>
+	</div>
+
+	<div class="container">
+	<ul class="nav navbar" id="navbar-wrapper">
+		<form class="form-inline">
+    		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    	</form>
+    	<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color: #5cbebf; color: #5cbebf;">Search</button>
+    </ul>
+
+    <ul class="nav navbar" id="navbar-wrapper" style="margin-top: 5vh; margin-bottom: 2vh;">
+    	<div class="row">
+    		<div class="col d-flex justify-space-between">
+    			<a href="#" id="nav-text">Browse</a>
+    			<a href="#" id="nav-text">Assess</a>
+    			<a href="#" id="nav-text">Opportunities</a>
+    		</div>
+    	</div>
+    </ul>
+	</div>
+</nav>
+
+<div class="card" id="question-card" style="height: 80vh">
+	<div class="card-header" id="question-header" style="background-color:#5cbebf">
+		<div class="row">
+			<div class="col-sm-5">
+				<h1 style="text-align: center;'" id="question-header-title">Personal Assessment</h1>
+			</div>
+			<div class="col-sm-6">
+				<div class="progress" style="margin-top: 1vh; background-color: grey; height: 3vh; border-radius: 12px;">
+		  			<div class="progress-bar" role="progressbar" style="width: 20%; background-color: white" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+			<div class="card-body" id="chart-body">
+
+			<div class="container" id="container-main-small">
+
+				<div class="row" style="margin-top: 2vh;">
+					<div class="col-sm-3">
+						<div class="container chart-icon">
+							<img src="https://image.flaticon.com/icons/svg/1924/1924432.svg" style="height: 12vh; width: auto; padding: 1vh;" class="chart-icon">
+						</div>
+					</div>
+					<div class="col-sm-7 w-100">
+						<h4 style="text-align: left; font-family: 'Roboto', sans-serif;">Question One:</h4>
+						<h3 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">Onsite Protective Gear</h3>
+					</div>
+				</div>
+
+		</div>
+
+		<div class="container">
+			<button class="btn btn-primary" id="question1" value="0" onclick="submit_choice(this.id);">Answer 1</button>
+			<button class="btn btn-primary" id="question2" value="0.25" onclick="submit_choice(this.id);">Answer 2</button>
+			<button class="btn btn-primary" id="question3" value="0.50" onclick="submit_choice(this.id);">Answer 3</button>
+			<button class="btn btn-primary" id="question4" value="0.75" onclick="submit_choice(this.id);">Answer 4</button>
+			<button class="btn btn-primary" id="question5" value="1" onclick="submit_choice(this.id);">Answer 5</button>
+		</div>
+
+		</div>
+	<div class="card-footer" id="question-footer"></div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

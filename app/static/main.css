@@ -24,7 +24,7 @@
 }
 
 #main-jumbotron {
-	height: 77vh;
+	height: 75.5vh;
 	background: url('https://www.nowherenetworks.com/wp-content/uploads/2018/07/oil-rig-illustration-1.jpg');
 	margin: 0px;
 }
@@ -283,3 +283,18 @@ html {
 
 }
 
+#question-header-title{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 38px;
+	color: white;
+}
+
+#question-icon {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
