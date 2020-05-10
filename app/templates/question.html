@@ -3,10 +3,37 @@
 {% block content %}
 <script type="text/javascript">
 
+	$(document).ready(function(){
+
+		console.log(document.cookie)
+		$("#login-modal").modal();
+	})
+
 	function submit_choice(id){
 		var value = document.getElementById(id).value;
 		document.cookie = `question1=${value}`;
 		window.location.href = window.origin + '/assessment2'
+	}
+
+	function close_modal(){
+		var name = document.getElementById('file_input1').value;
+		var location = document.getElementById('file_input2').value;
+		var occupation = document.getElementById('file_input3').value;
+
+		document.cookie = `name=${name}`;
+		document.cookie = `occupation=${occupation}`;
+		document.cookie = `location=${location}`;
+
+		data_array = [name, location, occupation]
+
+		for (i=0; i<3; i++){
+			if (!data_array[i]){
+				alert('Please enter a value!');
+				return;
+			}
+		}
+
+		$('#login-modal').modal('hide');
 	}
 
 </script>
@@ -97,6 +124,50 @@
 
 </div>
 	<div class="card-footer" id="question-footer"></div>
+</div>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row title">
+            <div class="col">
+                <h1 id="login-title" style="font-weight: 700;">Before We Start</h1>
+            </div>
+        </div>
+       <form action="/login" method="POST">
+        <div class="row body">
+            <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="file_input1" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                    	<input type="text" class="form-control" id="file_input2" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                    	<input type="text" class="form-control" id="file_input3" placeholder="Occupation">
+                    </div>
+            </div>
+        </div>
+    	</form>
+
+        <div class="row body" style="margin-top: 2vh;">
+            <div class="col">
+            	<p style="text-align: center;"><button class="btn btn-secondary" onclick="close_modal();">Continue</button></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+    </div>
+   </div>
+</div>
 </div>
 
 

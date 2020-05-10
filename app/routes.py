@@ -38,6 +38,7 @@ def login():
 				user = auth.create_user_with_email_and_password(email, password)
 				if (user):
 					print(user['idToken'])
+					return render_template('question.html')
 				else:
 					print(user['error']['message'])
 			except Exception as e:
@@ -48,10 +49,6 @@ def login():
 			return render_template('main.html')
 		else:
 			assert(0)
-
-@app.route('/dashboard')
-def dashboard():
-	return render_template('dashboard.html')
 
 @app.route('/assessment')
 def assessment():
@@ -78,3 +75,8 @@ def algo():
 	question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
 	answer = neural_net.model(question_list)
 	return answer
+
+@app.route('/dashboard')
+def dashboard():
+	return render_template('dashboard.html')
+
