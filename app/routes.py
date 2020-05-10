@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, request, flash
 import neural_net
+import random
 
 import pyrebase
 
@@ -72,9 +73,10 @@ def assessment5():
 
 @app.route('/algo')
 def algo():
-	# question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
-	# answer = neural_net.model(question_list)
-	return render_template('algo.html')
+	question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
+	print(question_list)
+	answer = neural_net.model(question_list)
+	return render_template('algo.html', neural_score=answer)
 
 @app.route('/dashboard')
 def dashboard():

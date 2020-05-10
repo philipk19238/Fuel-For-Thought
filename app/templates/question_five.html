@@ -6,7 +6,8 @@
 	function submit_choice(id){
 		var value = document.getElementById(id).value;
 		document.cookie = `question5=${value}`;
-		window.location.href = window.origin + '/algo'
+		document.cookie= `time=${Date().toLocaleString()}`;
+		window.location.href = window.origin + '/algo';
 	}
 
 </script>
@@ -75,22 +76,22 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.25" onclick="submit_choice(this.id);">B:) I would ask a more experienced coworker to mentor me.</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question2" value="0.25" onclick="submit_choice(this.id);">B:) I would ask a more experienced coworker to mentor me.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.5" onclick="submit_choice(this.id);">C:) I would go on as usual since it is a learning experience.</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question3" value="0.5" onclick="submit_choice(this.id);">C:) I would go on as usual since it is a learning experience.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.75" onclick="submit_choice(this.id);">D:) I would reject the project since I do not have any experience.</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question4" value="0.75" onclick="submit_choice(this.id);">D:) I would reject the project since I do not have any experience.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="1" onclick="submit_choice(this.id);">E:) I would be more careful when making important decisions.</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question5" value="1" onclick="submit_choice(this.id);">E:) I would be more careful when making important decisions.</button></p>
 				</div>
 			</div>
 		</div>
