@@ -3,6 +3,11 @@
 {% block content %}
 <script type="text/javascript">
 
+$(document).on('load', function(){
+	var name = document.cookie.split(';')[7].split('=')[1]
+	document.getElementById('main-name').text(`Welcome ${name}!`);
+})
+
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawTrendlines);
 
@@ -87,7 +92,7 @@ function drawTrendlines() {
 <div class="row" style="margin: 3vh;">
 <div class="col-sm-8">
 	<h1 style="text-align: left; margin-bottom: 1.5vh; font-family: 'Roboto', sans-serif; color: white; font-weight: 700; letter-spacing: 0.
-	5em;">Welcome back, John!</h1>
+	5em;" id="main-name">Welcome {{ name }}!</h1>
 <a class="card main">
 	<div class="card-header" id="chart-header"></div>
 	<div class="card-body" id="chart-body-main">

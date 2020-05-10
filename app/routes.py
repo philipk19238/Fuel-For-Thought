@@ -78,5 +78,6 @@ def algo():
 
 @app.route('/dashboard')
 def dashboard():
-	return render_template('dashboard.html')
+	name = request.cookies.get('name')
+	return render_template('dashboard.html', name=name)
 
