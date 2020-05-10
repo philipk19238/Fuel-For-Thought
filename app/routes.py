@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, flash
+import neural_net
 
 import pyrebase
 
@@ -55,3 +56,8 @@ def dashboard():
 @app.route('/game')
 def game():
 	return render_template('game.html')
+
+
+@app.route('/algo')
+def algo():
+    return neural_net.model(0, 1, 2, 3, 4)
