@@ -57,9 +57,21 @@ def dashboard():
 def assessment():
 	return render_template('question.html')
 
-def game():
-	return render_template('game.html')
+@app.route('/assessment2')
+def assessment2():
+	return render_template('question_two.html')
 
+@app.route('/assessment3')
+def assessment3():
+	return render_template('question_three.html')
+
+@app.route('/assessment4')
+def assessment4():
+	return render_template('question_four.html')
+
+@app.route('/assessment5')
+def assessment5():
+	return render_template('question_five.html')
 
 @app.route('/algo')
 def algo():

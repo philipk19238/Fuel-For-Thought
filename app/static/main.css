@@ -298,3 +298,20 @@ html {
   transform: translate(-50%, -50%);
 
 }
+
+.btn.btn-primary.questions {
+	width: 100%;
+	text-align: left;
+	background-color: white;
+	border-radius: 12px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	color: black;
+	padding: 2vh;
+	border: 1px solid #5cbebf;
+}
+
+.btn.btn-primary.questions:hover {
+	background-color: WhiteSmoke;
+	border: 3px solid #5cbebf;
+}

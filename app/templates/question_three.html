@@ -5,8 +5,8 @@
 
 	function submit_choice(id){
 		var value = document.getElementById(id).value;
-		document.cookie = `question1=${value}`;
-		window.location.href = window.origin + '/assessment2'
+		document.cookie = `question3=${value}`;
+		window.location.href = window.origin + '/assessment4'
 	}
 
 </script>
@@ -60,8 +60,8 @@
 						</div>
 					</div>
 					<div class="col-sm-7 w-100">
-						<h4 style="text-align: left; font-family: 'Roboto', sans-serif;">Question One:</h4>
-						<h3 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">If a member of your team was not pulling their weight on a project, what would you do?</h3>
+						<h4 style="text-align: left; font-family: 'Roboto', sans-serif;">Question Three:</h4>
+						<h3 style="text-align: left; font-family: 'Roboto', sans-serif; font-weight: 700;">When a friendly coworker approaches you with a personal problem, how would you react?</h3>
 					</div>
 				</div>
 
@@ -70,27 +70,27 @@
 		<div class="container" id="container-main-small" style="margin-top: 5vh;">
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0" onclick="submit_choice(this.id);">A:) I would not do anything as it is not my responsibility</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0" onclick="submit_choice(this.id);">A:) I would not comment on the situation because it is not relevant to my work.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.25" onclick="submit_choice(this.id);">B:) I would reach out to a higher authority</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.25" onclick="submit_choice(this.id);">B:) I would tell them what I would do if I were in the same situation.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.5" onclick="submit_choice(this.id);">C:) I would take on some or all of the team member's responsibilities</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.5" onclick="submit_choice(this.id);">C:) I would try to offer them advice or a solution.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.75" onclick="submit_choice(this.id);">D:) I would ask the team member why they were not able to contribute</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="0.75" onclick="submit_choice(this.id);">D:) I would empathize with them and try to take their mind off the issue.</button></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="1" onclick="submit_choice(this.id);">E:) I would talk to them and voice my concerns about their contributions</button></p>
+					<p style="text-align: center;"><button class="btn btn-primary questions" id="question1" value="1" onclick="submit_choice(this.id);">E:) I would stay objective and tell them what I think the issue is.</button></p>
 				</div>
 			</div>
 		</div>
