@@ -53,7 +53,10 @@ def login():
 def dashboard():
 	return render_template('dashboard.html')
 
-@app.route('/game')
+@app.route('/assessment')
+def assessment():
+	return render_template('question.html')
+
 def game():
 	return render_template('game.html')
 
