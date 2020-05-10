@@ -10,10 +10,10 @@
 		<h4 id="main-title-sub">
 		Viam sumi mo id erit. Objectioni mo de necessario crediderim. Imo terra vox alios aut lor quasi. Vim quaero aut videri pendam plures duo.
 		</h4>	
-		<p style="text-align:center;"><button class="btn btn-primary" id="main-button" type="button" data-toggle="modal" data-target="#login-modal">Join Now</button></p>
+		<p style="text-align:center;"><button onclick="makeFile()" class="btn btn-primary" id="main-button" type="button" data-toggle="modal" data-target="#login-modal">Join Now</button></p>
 	</div>
 
-	
+	<script src="{{ url_for('static', filename='hedera/bundle.js')}}"></script>
 </div>
 
 
@@ -119,25 +119,26 @@
                 <h1 id="login-title">User Login</h1>
             </div>
         </div>
+        <form action="/login" method="POST">
         <div class="row body">
             <div class="col">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="file_input_username" placeholder="Enter Your Email ID">
+                        <input name="email" type="text" class="form-control" id="file_input_username" placeholder="Enter Your Email ID">
                     </div>
                     <div class="form-group">
-                    	<input type="text" class="form-control" id="file_input_password" placeholder="Password">
+                    	<input name="pw" type="text" class="form-control" id="file_input_password" placeholder="Password">
                     </div>
-                                  
             </div>
         </div>
         <div class="row" id="button-row">
         	<div class="col">
-        		<p style="text-align: right;"><button class="btn btn-secondary" id="login_btn">Sign In</button></p>
+        		<p style="text-align: right;"><button value="login" name="action" type="submit" class="btn btn-secondary" id="login_btn">Sign In</button></p>
         	</div>
         	<div class="col">
-        		<p style="text-align: left;"><button class="btn btn-secondary" id="signup_btn">Sign Up</button></p>
+        		<p style="text-align: left;"><button value="signup" name="action" class="btn btn-secondary" id="signup_btn">Sign Up</button></p>
         	</div>
         </div>
+    	</form>
     </div>
     <div class="modal-footer">
 

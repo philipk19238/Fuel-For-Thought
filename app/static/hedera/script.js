@@ -1,5 +1,6 @@
-const { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar, FileContentsQuery, FileId } = require("@hashgraph/sdk");
+import { Client, FileCreateTransaction, Ed25519PrivateKey, Hbar, FileContentsQuery, FileId } from "@hashgraph/sdk";
 require("dotenv").config();
+
 
 async function makeFile() {
   const operatorAccount = process.env.OPERATOR_ID;
@@ -51,11 +52,11 @@ async function getFile(fileId)
   console.log(`file contents: ${new TextDecoder().decode(resp)}`) 
 }
 
-async function main()
-{
-  let id = await makeFile();
-  console.log(id);
-  getFile(id);
-}
+// async function main()
+// {
+//   let id = await makeFile();
+//   console.log(id);
+//   getFile(id);
+// }
 
-main()
+// main()
