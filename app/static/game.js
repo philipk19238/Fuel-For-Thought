@@ -1,13 +1,12 @@
 var vehicles = [];
 var money = 0;
 
-
 function setup() {
   createCanvas(640,360);
   for (var i = 0; i < 1; i++) {
     vehicles.push(new Vehicle(width/2,height/2));
   }
-  var text = createP("Every time you inflate the balloon, you earn $1. However, if you inflate the balloon too much and it pops (denoted by a black X at the top of the screen), you lose $7. The goal of the game is to make as much money as possible. Click the mouse to inflate the balloon and the space bar to reset the balloon to avoid popping it.");
+  var text = createP("Every time you inflate the balloon, you earn $1. However, if you inflate the balloon too much and it pops (denoted by a black X at the top of the screen), you lose $15. The goal of the game is to make as much money as possible. Click the mouse to inflate the balloon and the space bar to reset the balloon to avoid popping it.");
 }
 
 function draw() {
@@ -39,14 +38,14 @@ function mousePressed() {
   }
   
     if(vehicles[0].clicks === 0){   
-      money -= 8;
+      money -= 16;
       vehicles[0] = new Vehicle(width/2,height/2);
     }
 }
 
 function keyPressed() {
   if(vehicles[0].clicks === 1){
-    money -= 7;
+    money -= 15;
   }
   vehicles[0] = new Vehicle(width/2, height/2); 
 }
