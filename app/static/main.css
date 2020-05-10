@@ -315,3 +315,15 @@ html {
 	background-color: WhiteSmoke;
 	border: 3px solid #5cbebf;
 }
+
+#result-container {
+	margin-top: 3vh;
+	padding: 6vh;
+	border: 1px solid WhiteSmoke;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+	transition: 0.3s;
+}
+
+#result-container:hover {
+	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.5);
+}

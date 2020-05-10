@@ -1,10 +1,8 @@
-<html>
-<head>
-    <title>Test results</title>
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-    <script type="text/javascript">
-        FusionCharts.ready(function(){
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<script type="text/javascript">
+    FusionCharts.ready(function(){
             var chartObj = new FusionCharts({
     type: 'radar',
     renderAt: 'chart-container',
@@ -64,10 +62,63 @@
 );
             chartObj.render();
         });
-    </script>
-    </head>
-    <body>
-        <div id="chart-container">FusionCharts XT will load here!</div>
-        <div>{{ neural_score }}</div>
-    </body>
-</html>
+</script>
+
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar" style="height: 15vh;">
+    <div class="container-simple">
+        <a href="http://127.0.0.1:5000/" class="navbar-brand"><img src="static/logo.png" style="height: 8vh; width: auto;"></a>
+    </div>
+
+    <div class="container">
+    <ul class="nav navbar" id="navbar-wrapper">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color: #5cbebf; color: #5cbebf;">Search</button>
+    </ul>
+
+    <ul class="nav navbar" id="navbar-wrapper" style="margin-top: 5vh; margin-bottom: 2vh;">
+        <div class="row">
+            <div class="col d-flex justify-space-between">
+                <a href="#" id="nav-text">Browse</a>
+                <a href="#" id="nav-text">Assess</a>
+                <a href="#" id="nav-text">Opportunities</a>
+            </div>
+        </div>
+    </ul>
+    </div>
+</nav>
+
+<div class="container" id="result-container">
+    <div class="row">
+        <div class="col">
+            <h1 style="text-align: left; margin-bottom: 3vh; font-weight: 700;">Your Results</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"><div id="chart-container">FusionCharts XT will load here!</div></div>
+        <div class="col">
+                <div class="row">
+                    <div style="font-style: 'Roboto', sans-serif; font-size: 20px; font-weight: 700;">Personality: <div style="font-weight: 400;">{{ neural_score }}</div></div>
+                </div>
+                <div class="row">
+                    <div style="font-style: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; margin-top: 1vh;">Traits: <div style="font-weight: 400;">{{ personality }}</div></div>
+                </div>
+                <div class="row">
+                    <div style="font-style: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; margin-top: 1vh;">Compatible Personalities: <div style="font-weight: 400;">{{ result }}</div></div>
+                </div>
+                <div class="row">
+                    <div style="font-style: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; margin-top: 1vh;">Compatible Personalities: <div style="font-weight: 400;">{{ result }}</div></div>
+                </div>
+
+                <div class="row">
+                    <div style="font-style: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; margin-top: 1vh;">Time in Ledger: <div style="font-weight: 400;">{{ time }}</div></div>
+                </div>
+        </div>
+    </div>
+           
+
+
+  
+{% endblock %}

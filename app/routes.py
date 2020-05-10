@@ -31,7 +31,8 @@ def login():
 		if request.form["action"] == "login":
 			try:
 				auth.sign_in_with_email_and_password(email, password)
-				return 'Login Successful'
+				name = request.cookies.get('name')
+				return render_template('dashboard.html', name=name)
 			except:
 				return 'Login failed'
 		elif request.form["action"] == "signup":
@@ -76,7 +77,15 @@ def algo():
 	question_list = [float(request.cookies.get(f"question{i}")) for i in range(1,6)]
 	print(question_list)
 	answer = neural_net.model(question_list)
-	return render_template('algo.html', neural_score=answer)
+
+	type_dic = {key:value for key,value in zip(['Type 1', 'Type 2', 'Type3 3', 'Type 4'], 'Creative Efficient Extrovert Free-Thinking'.split(' '))}
+
+	result_dic = {key:value for key,value in zip('Creative Efficient Extrovert Free-Thinking'.split(' '), ['Efficient, Secure, Free-Thinking', 'Introvert, Compassionate, Secure',
+																											 'Easy-Going, Consistent, Sensitive', 'Creative, Efficient, Consistent'])}
+	
+	time = request.cookies.get('time')
+
+	return render_template('algo.html', neural_score=answer, personality=type_dic[answer], result=result_dic[type_dic[answer]], time=time)
 
 @app.route('/dashboard')
 def dashboard():
