@@ -32,7 +32,9 @@ def login():
 			try:
 				auth.sign_in_with_email_and_password(email, password)
 				name = request.cookies.get('name')
-				return render_template('dashboard.html', name=name)
+				location = request.cookies.get('location')
+				occupation = request.cookies.get('occupation')
+				return render_template('dashboard.html', name=name, location=location, occupation=occupation)
 			except:
 				return 'Login failed'
 		elif request.form["action"] == "signup":
@@ -90,6 +92,12 @@ def algo():
 @app.route('/dashboard')
 def dashboard():
 	name = request.cookies.get('name')
-	return render_template('dashboard.html', name=name)
+	location = request.cookies.get('location')
+	occupation = request.cookies.get('occupation')
+	return render_template('dashboard.html', name=name, location=location, occupation=occupation)
+
+@app.route('/game')
+def game():
+	return render_template('game.html')
 
 

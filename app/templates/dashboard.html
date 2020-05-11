@@ -92,7 +92,8 @@ function drawTrendlines() {
 <div class="row" style="margin: 3vh;">
 <div class="col-sm-8">
 	<h1 style="text-align: left; margin-bottom: 1.5vh; font-family: 'Roboto', sans-serif; color: white; font-weight: 700; letter-spacing: 0.
-	5em;" id="main-name">Welcome {{ name }}!</h1>
+	5em;" id="main-name"> {{ name }} | {{ location }} | {{occupation}}</h1>
+
 <a class="card main">
 	<div class="card-header" id="chart-header"></div>
 	<div class="card-body" id="chart-body-main">
@@ -244,6 +245,7 @@ function drawTrendlines() {
 </div>
 </div>
 
+
 <div class="container" style="margin-top: 2vh;">
 	<div class="card">
 	<div class="card-header"></div>
@@ -253,8 +255,7 @@ function drawTrendlines() {
 	<div class="card-footer"></div>
 	</div>
 </div>
-</div>
-	
+
 {% endblock %}
 
 {% block scripts %}
