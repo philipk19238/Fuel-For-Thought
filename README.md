@@ -38,4 +38,4 @@ Hedera Hashgraph and Hedera File Service API
 ### Links
 Devpost: https://devpost.com/software/fuel-for-thought
 
-Slide Deck: https://docs.google.com/presentation/d/1PoPpnQWL03I0f5uUWgAE82Fn5wdY2PZP37T7EDmsw54/edit
+Slide Deck: https://docs.google.com/presentation/d/1PoPpnQWL03I0f5uUWgAE82Fn5wdY2PZP37T7EDmsw54/edit?usp=sharing
