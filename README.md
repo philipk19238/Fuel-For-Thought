@@ -1,5 +1,4 @@
-# future-of-work-hackathon
-
+<h1 align="center"><b>Fuel for Thought</b></h1>
 <p align="center">
  <a href="https://docs.google.com/presentation/d/1PoPpnQWL03I0f5uUWgAE82Fn5wdY2PZP37T7EDmsw54/edit?usp=sharing">
   <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/089/844/datas/gallery.jpg">
